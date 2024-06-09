@@ -3,6 +3,7 @@
 
 ## Docker commands
 
+
 ### Install docker in computer
 
 1.  Add Docker's official GPG key:- <br>
@@ -35,17 +36,29 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 
 ### Build a docker image
-docker build -t getting-started .<br>
+	docker build -t "Name of the container" .<br>
 
 ### Run a Container
-docker run -dp 127.0.0.1:3000:3000 "Name of the container"<br>
+	docker run -dp 127.0.0.1:3000:3000 "Name of the container"<br>
 
 ### List Containers
-docker ps<br>
+	docker ps<br>
 
 ### Stop the container
-docker stop "the-container-id"<br> 
-docker rm "the-container-id"<br>
-or <br>
-docker rm -f "the-container-id"<br>
+	docker stop "the-container-id"<br> 
+	docker rm "the-container-id"<br>
+	or <br>
+	docker rm -f "the-container-id"<br>
+
+### List docker image
+	docker image ls
+
+### Pushing in Dockerhub
+	a.	docker login -u "username"
+	b.	docker tag getting-started username/getting-started "give a name to image using tag"
+	c.	docker push username/getting-started
+	
+### Connect to the DataBase
+	docker exec -it "container-id" mysql -u root -p
+
 
