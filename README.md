@@ -61,4 +61,5 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ### Connect to the DataBase
 	docker exec -it "container-id" mysql -u root -p
 
-
+### Access terminal after lunching docker
+	docker run -it "imagename"
