@@ -36,19 +36,19 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 
 ### Build a docker image
-	docker build -t "Name of the container" .<br>
+	docker build -t "Name of the container" .
 
 ### Run a Container
-	docker run -dp 127.0.0.1:3000:3000 "Name of the container"<br>
+	docker run -dp 127.0.0.1:3000:3000 "Name of the container"
 
 ### List Containers
-	docker ps<br>
+	docker ps
 
 ### Stop the container
-	docker stop "the-container-id"<br> 
-	docker rm "the-container-id"<br>
-	or <br>
-	docker rm -f "the-container-id"<br>
+	docker stop "the-container-id" 
+	docker rm "the-container-id"
+	or 
+	docker rm -f "the-container-id"
 
 ### List docker image
 	docker image ls
