@@ -38,8 +38,11 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ### Build a docker image
 	docker build -t "Name of the container" .
 
-### Run a Container
+### Run a Container detached
 	docker run -dp 127.0.0.1:3000:3000 "Name of the container"
+
+### Run a container
+	docker run -it -p 443:443 "name of cont"
 
 ### List Containers
 	docker ps
@@ -52,6 +55,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ### List docker image
 	docker image ls
+
+### Delete Docker Image
+
 
 ### Pushing in Dockerhub
 	a.	docker login -u "username"
