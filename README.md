@@ -80,3 +80,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ### build a image
 	docker compose up --build
+
+
+## mariadb commands
+	- docker exec -it "conataine name" bash
+	- mysql
+	- show databases;
+	- use "name of databse";
+	- show tables;
+	- select * from "name of table"
