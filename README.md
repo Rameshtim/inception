@@ -1,5 +1,11 @@
 
+https://medium.com/@ssterdev/inception-guide-42-project-part-i-7e3af15eb671
+
 # inception
+
+## Get the package version before installing
+	apt-cache policy "name of package"
+
 
 ## Docker commands
 
@@ -69,3 +75,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ### Access terminal after lunching docker
 	docker run -it "imagename"
+
+## Docker compose
+
+### build a image
+	docker compose up --build
