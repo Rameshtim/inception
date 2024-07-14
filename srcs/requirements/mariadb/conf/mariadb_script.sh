@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mysql_install_db
+mysql_update
 mysqld

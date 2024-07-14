@@ -7,7 +7,7 @@ RUN apt -y install wget curl php php-fpm php-mysqli mariadb-client
 # RUN chown -R root:root /var/www
 # Create the /run/php directory
 RUN mkdir -p /run/php && chown -R www-data:www-data /run/php
-COPY /conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
+COPY /conf/www.conf /etc/php/7.4/fpm/pool.d/.
 
 COPY conf/script.sh .
 RUN chmod +x script.sh

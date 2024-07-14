@@ -1,6 +1,6 @@
 services:
   nginx:
-    build: src/requirements/nginx/.
+    build: requirements/nginx/.
     container_name: nginx
     depends_on:
       - wordpress
@@ -13,18 +13,18 @@ services:
       - inception
   
   wordpress:
-    build: src/requirements/wordpress/.
+    build: requirements/wordpress/.
     container_name: wp-php
     depends_on:
       - mariadb
     volumes:
       #- ./web:/var/www/html
-      - wp-volume:/var/www/wordpress
+      - wp-volume:/var/www/html
     networks:
       - inception
   
   mariadb:
-    build: src/requirements/mariadb/.
+    build: requirements/mariadb/.
     container_name: mariadb
     volumes:
       #- ./database:/var/lib/mysql
@@ -34,6 +34,7 @@ services:
 
 networks:
   inception:
+    name: ramesh_inception
     driver: bridge
 
 volumes:
