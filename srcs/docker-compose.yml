@@ -7,8 +7,8 @@ services:
       - mariadb
     ports:
       - "443:443"
-    # volumes:
-      #- ./web:/var/www/html
+    volumes:
+      - wp-volume:/var/www/html
     networks:
       - inception
   

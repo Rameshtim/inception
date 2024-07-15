@@ -9,5 +9,4 @@ RUN mkdir -p /var/lib/mysql /run/mysqld && chown -R mysql:mysql /var/lib/mysql /
 COPY conf/mariadb_script.sh .
 RUN chmod +x mariadb_script.sh
 
-CMD [ "mysqld" ]
-# CMD [ "./mariadb_script.sh" ]
+CMD [ "./mariadb_script.sh" ]

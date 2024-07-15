@@ -8,7 +8,7 @@ RUN chmod 755 /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/index.html /var/www/html/index.html
-COPY conf/index.php /var/www/html/index.php
+COPY conf/calc.php /var/www/html/calc.php
 
 CMD [ "nginx", "-g", "daemon off;" ]
 

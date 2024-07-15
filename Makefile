@@ -22,6 +22,11 @@ down:
 	@printf "Stopping configuration ${name}...\n"
 	@docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env down
 
+file_del:
+	@sudo rm -rf ~/data/wordpress/*
+	@sudo rm -rf ~/data/mariadb/*
+
+
 # Ensure 're' depends on 'down' to stop before rebuilding
 re: down
 	@printf "Rebuilding configuration ${name}...\n"
@@ -40,5 +45,7 @@ fclean:
 	@docker system prune --all --force --volumes
 	@docker network prune --force
 	@docker volume prune --force
+	@sudo rm -rf ~/data/wordpress/*
+	@sudo rm -rf ~/data/mariadb/*
 
 .PHONY: all images build down re clean fclean
