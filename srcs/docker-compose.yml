@@ -1,6 +1,6 @@
 services:
   nginx:
-    build: src/requirements/nginx/.
+    build: requirements/nginx/.
     container_name: nginx
     depends_on:
       - wordpress
@@ -13,7 +13,7 @@ services:
       - inception
   
   wordpress:
-    build: src/requirements/wordpress/.
+    build: requirements/wordpress/.
     container_name: wp-php
     depends_on:
       - mariadb
@@ -24,7 +24,7 @@ services:
       - inception
   
   mariadb:
-    build: src/requirements/mariadb/.
+    build: requirements/mariadb/.
     container_name: mariadb
     volumes:
       #- ./database:/var/lib/mysql
@@ -41,11 +41,11 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/rtimsina/data/wordpress
+      device: /home/ramesh/data/wordpress
 
 
   db-volume:
     driver_opts:
       o: bind
       type: none
-      device: /home/rtimsina/data/mariadb
+      device: /home/ramesh/data/mariadb
