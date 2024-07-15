@@ -12,7 +12,15 @@ all: images
 	@printf "${BOLD}${GREEN}Launch configuration ${name}...${NC}\n"
 	@docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d
 	@printf "${BOLD}${YELLOW}Setting up WordPress, please wait ....${NC}\n"
-	@sleep 10
+	@for i in 1 2 3 4 5 6 7 8 9 10; do \
+		if [ $$((i % 2)) -eq 0 ]; then \
+			printf "${GREEN} => ${NC}"; \
+		else \
+			printf "${RED} => ${NC}"; \
+		fi; \
+		sleep 2; \
+	done
+	@printf "\n"
 	@echo "${BOLD}${GREEN}Application is accessible at https://localhost:443/${NC}"
 
 # Define 'images' target for building images
@@ -31,7 +39,7 @@ build: images
 		else \
 			printf "${RED} => ${NC}"; \
 		fi; \
-		sleep 1; \
+		sleep 2; \
 	done
 	@printf "\n"
 	@echo "${BOLD}${GREEN}Application is accessible at https://localhost:443/${NC}"
@@ -56,7 +64,7 @@ re: down
 		else \
 			printf "${RED} => ${NC}"; \
 		fi; \
-		sleep 1; \
+		sleep 2; \
 	done
 	@printf "\n"
 	@echo "${BOLD}${GREEN}Application is accessible at https://localhost:443/${NC}"

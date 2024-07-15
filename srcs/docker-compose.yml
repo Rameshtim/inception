@@ -11,6 +11,9 @@ services:
       - wp-volume:/var/www/html
     networks:
       - inception
+    env_file:
+      - .env
+    restart: on-failure
   
   wordpress:
     build: requirements/wordpress/.
@@ -22,6 +25,18 @@ services:
       - wp-volume:/var/www/html
     networks:
       - inception
+    env_file:
+      - .env
+    secrets:
+      - db_user
+      - db_password
+      - db_root_password
+      - wp_admin_pass
+      - wp_admin_user
+      - wp_admin_pass
+      - wp_admin_user
+      - wp_admin_email
+    restart: on-failure
   
   mariadb:
     build: requirements/mariadb/.
@@ -31,6 +46,15 @@ services:
       - db-volume:/var/lib/mysql
     networks:
       - inception
+    env_file:
+      - .env
+    secrets:
+      - db_user
+      - db_password
+      - db_root_password
+      - wp_admin_pass
+      - wp_admin_user
+    restart: on-failure
 
 networks:
   inception:
@@ -50,3 +74,17 @@ volumes:
       o: bind
       type: none
       device: /home/rtimsina/data/mariadb
+
+secrets:
+  db_user:
+    file: ../secrets/db_user.txt
+  db_password:
+    file: ../secrets/db_password.txt
+  db_root_password:
+    file: ../secrets/db_root_password.txt
+  wp_admin_pass:
+    file: ../secrets/wp_admin_pass.txt
+  wp_admin_user:
+    file: ../secrets/wp_admin_user.txt
+  wp_admin_email:
+    file: ../secrets/wp_admin_email.txt
