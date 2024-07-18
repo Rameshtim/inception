@@ -7,8 +7,8 @@ services:
       - mariadb
     ports:
       - "443:443"
-    # volumes:
-      #- ./web:/var/www/html
+    volumes:
+      - wp-volume:/var/www/html
     networks:
       - inception
   
@@ -18,8 +18,7 @@ services:
     depends_on:
       - mariadb
     volumes:
-      #- ./web:/var/www/html
-      - wp-volume:/var/www/wordpress
+      - wp-volume:/var/www/html
     networks:
       - inception
   
@@ -27,7 +26,6 @@ services:
     build: requirements/mariadb/.
     container_name: mariadb
     volumes:
-      #- ./database:/var/lib/mysql
       - db-volume:/var/lib/mysql
     networks:
       - inception
