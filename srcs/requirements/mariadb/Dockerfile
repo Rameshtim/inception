@@ -14,4 +14,4 @@ RUN chmod +x init_gen.sh
 # COPY conf/mariadb_script.sh .
 # RUN chmod +x mariadb_script.sh
 
-CMD [ "mysqld" ]
+CMD [ "./init_gen.sh" ]

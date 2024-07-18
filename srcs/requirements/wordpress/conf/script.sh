@@ -14,7 +14,7 @@ WP_ADMIN_EMAIL=$(cat /run/secrets/wp_admin_email)
 echo "WAITING FOR MARIADB ...."
 sleep 10
 ./wp-cli.phar core download --allow-root
-./wp-cli.phar config create --dbname=newwordpress --dbuser=$DB_USER --dbpass=$DB_PASS --dbhost=mariadb --allow-root
+./wp-cli.phar config create --dbname=wordpress --dbuser=$DB_USER --dbpass=$DB_PASS --dbhost=mariadb --allow-root
 ./wp-cli.phar core install --url=localhost --title=inception --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASS --admin_email=$WP_ADMIN_EMAIL --allow-root
 ./wp-cli.phar plugin install --activate --path='/var/www/html' jetpack --allow-root
 ./wp-cli.phar theme install twentytwenty --activate --path='/var/www/html' --allow-root
