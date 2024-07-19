@@ -32,8 +32,6 @@ services:
       - db_root_password
       - wp_admin_pass
       - wp_admin_user
-      - wp_admin_pass
-      - wp_admin_user
       - wp_admin_email
     restart: on-failure
   
