@@ -29,6 +29,8 @@ services:
     secrets:
       - db_user
       - db_password
+      - wp_user
+      - wp_pass
       - db_root_password
       - wp_admin_pass
       - wp_admin_user
@@ -62,20 +64,24 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/ramesh/data/wordpress
+      device: /home/rtimsina/data/wordpress
 
 
   db-volume:
     driver_opts:
       o: bind
       type: none
-      device: /home/ramesh/data/mariadb
+      device: /home/rtimsina/data/mariadb
 
 secrets:
   db_user:
     file: ../secrets/db_user.txt
+  wp_user:
+    file: ../secrets/wp_user.txt
   db_password:
     file: ../secrets/db_password.txt
+  wp_pass:
+    file: ../secrets/wp_pass.txt
   db_root_password:
     file: ../secrets/db_root_password.txt
   wp_admin_pass:
