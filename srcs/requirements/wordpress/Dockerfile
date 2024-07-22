@@ -8,4 +8,4 @@ COPY /conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 COPY tools/script.sh .
 RUN chmod +x script.sh
 CMD [ "tini", "--", "./script.sh" ]
-# CMD [ "php-fpm7.4", "-F" ]
+
