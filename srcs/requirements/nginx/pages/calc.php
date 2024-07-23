@@ -63,7 +63,7 @@
             background-color: #388e3c;
         }
         .footer {
-            margin-top: 40px;
+            margin-top: 80px;
             font-size: 16px;
             color: #555;
         }
@@ -97,7 +97,7 @@
     </div>
     
     <div class="footer">
-        <h1>Designed by [Your Name]</h1>
+        <h1>Designed for 42-Berlin Evaluator</h1>
         <a href="/">Go Back to Homepage</a>
     </div>
     <script>
